@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>RedGate.AppHost</id>
+        <version>1.0.0</version>
+        <title>Red Gate Out of Process App Host</title>
+        <authors>Red Gate</authors>
+        <owners>Red Gate</owners>
+	<projectUrl>https://github.com/red-gate/RedGate.AppHost</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Provides a way to host a UI out of process and remote it in</description>
+        <summary>Provides a way to host a UI out of process and remote it in</summary>
+	<references>
+		<reference file="RedGate.AppHost.Server.dll" />
+		<reference file="RedGate.AppHost.Client.exe" />
+	</references>
+    </metadata>
+    <files>
+	    <file src="RedGate.AppHost.Client.exe" target="lib" />
+	    <file src="RedGate.AppHost.Client.pdb" target="lib" />
+	    <file src="RedGate.AppHost.Interfaces.dll" target="lib" />
+	    <file src="RedGate.AppHost.Interfaces.pdb" target="lib" />
+	    <file src="RedGate.AppHost.Remoting.dll" target="lib" />
+	    <file src="RedGate.AppHost.Remoting.pdb" target="lib" />
+	    <file src="RedGate.AppHost.Server.dll" target="lib" />
+	    <file src="RedGate.AppHost.Server.pdb" target="lib" />
+    </files>
+</package>
