@@ -17,6 +17,8 @@
 	</references>
     </metadata>
     <files>
+      <file src="RedGate.AppHost.Example.Client.dll" target="lib" />
+      <file src="RedGate.AppHost.Example.Server.exe" target="lib" />
 	    <file src="RedGate.AppHost.Client.exe" target="lib" />
 	    <file src="RedGate.AppHost.Client.pdb" target="lib" />
 	    <file src="RedGate.AppHost.Interfaces.dll" target="lib" />
