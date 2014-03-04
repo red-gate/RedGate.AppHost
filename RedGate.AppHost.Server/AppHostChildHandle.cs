@@ -15,7 +15,9 @@ namespace RedGate.AppHost.Server
 
         public INativeHandleContract Initialize(IAppHostServices services)
         {
-            var nativeHandleContractWithoutIntPtr = m_SafeAppHostChildHandle.Initialize(services);
+            object handleContractWithoutIntPtr = m_SafeAppHostChildHandle.Initialize(services);
+            
+            INativeHandleContractWithoutIntPtr nativeHandleContractWithoutIntPtr = (INativeHandleContractWithoutIntPtr) handleContractWithoutIntPtr;
 
             return new NativeHandleContractAdapter(nativeHandleContractWithoutIntPtr);
         }
