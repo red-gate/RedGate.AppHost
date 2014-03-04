@@ -15,7 +15,7 @@ namespace RedGate.AppHost.Server
 
         private readonly string m_Id = string.Format("{0}.IPC.{{{1}}}", c_FileName, Guid.NewGuid());
 
-        public IAppHostChildHandle Create(string assemblyName, string typeName)
+        public IAppHostChildHandle Create(string assemblyName)
         {
             using (EventWaitHandle signal = new EventWaitHandle(false, EventResetMode.ManualReset, m_Id))
             {

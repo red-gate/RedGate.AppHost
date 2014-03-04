@@ -14,7 +14,7 @@ namespace RedGate.AppHost.Example.Server
 
             try
             {
-                var safeAppHostChildHandle = new ChildProcessFactory().Create("RedGate.AppHost.Example.Client.dll", "RedGate.AppHost.Example.Client.UserControl1");
+                var safeAppHostChildHandle = new ChildProcessFactory().Create("RedGate.AppHost.Example.Client.dll");
 
                 var nativeHandleContractWithoutIntPtr = safeAppHostChildHandle.Initialize(new ServiceLocator());
 
