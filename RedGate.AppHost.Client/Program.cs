@@ -1,10 +1,10 @@
 ﻿using System;
+using System.Linq;
 using System.Reflection;
 using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
 using RedGate.AppHost.Interfaces;
-
 
 namespace RedGate.AppHost.Client
 {
@@ -19,38 +19,38 @@ namespace RedGate.AppHost.Client
             ConsoleNativeMethods.AllocConsole();
 #endif
 
-            if (args.Length != 3)
+            if (args.Length != 2)
             {
                 MessageBox.Show("Hello :)\n\nI'm the child process for the Red Gate Deployment Manager SSMS add-in.\n\nPlease use SSMS rather than running me directly.", "RedGate.SQLCI.UI", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
             {
-                MainInner(args[0], args[1], args[2]);                
+                MainInner(args[0], args[1]);                
             }
         }
 
-        private static void MainInner(string id, string assembly, string typeName)
+        private static void MainInner(string id, string assembly)
         {
-            FrameworkElement element = LoadChildAssembly(assembly, typeName);
-            InitializeRemoting(id, element);
+            var entryPoint = LoadChildAssembly(assembly);
+            InitializeRemoting(id, entryPoint);
             SignalReady(id);
             RunWpf();
         }
 
-        private static FrameworkElement LoadChildAssembly(string assembly, string typeName)
+        private static IOutOfProcessEntryPoint LoadChildAssembly(string assembly)
         {
             var outOfProcAssembly = Assembly.LoadFile(assembly);
 
-            var type = outOfProcAssembly.GetType(typeName);
+            var entryPoint = outOfProcAssembly.GetTypes().Single(x => x.GetInterfaces().Contains(typeof (IOutOfProcessEntryPoint)));
 
-            return (FrameworkElement) Activator.CreateInstance(type);
+            return (IOutOfProcessEntryPoint) Activator.CreateInstance(entryPoint);
         }
 
-        private static void InitializeRemoting(string id, FrameworkElement element)
+        private static void InitializeRemoting(string id, IOutOfProcessEntryPoint entryPoint)
         {
             Remoting.Remoting.RegisterChannels(true, id);
 
-            s_SafeAppHostChildHandle = new SafeAppHostChildHandle(Dispatcher.CurrentDispatcher, element);
+            s_SafeAppHostChildHandle = new SafeAppHostChildHandle(Dispatcher.CurrentDispatcher, entryPoint);
             Remoting.Remoting.RegisterService<SafeAppHostChildHandle, ISafeAppHostChildHandle>(s_SafeAppHostChildHandle);
         }
 

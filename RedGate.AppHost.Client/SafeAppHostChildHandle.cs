@@ -8,17 +8,23 @@ namespace RedGate.AppHost.Client
     internal class SafeAppHostChildHandle : MarshalByRefObject, ISafeAppHostChildHandle
     {
         private readonly Dispatcher m_UiThreadDispatcher;
-        private readonly FrameworkElement m_Element;
+        private readonly IOutOfProcessEntryPoint m_EntryPoint;
 
-        public SafeAppHostChildHandle(Dispatcher uiThreadDispatcher, FrameworkElement element)
+        public SafeAppHostChildHandle(Dispatcher uiThreadDispatcher, IOutOfProcessEntryPoint entryPoint)
         {
             m_UiThreadDispatcher = uiThreadDispatcher;
-            m_Element = element;
+            m_EntryPoint = entryPoint;
         }
 
         public INativeHandleContractWithoutIntPtr Initialize(IAppHostServices services)
         {
-            Func<NativeHandleContractMarshalByRefObject> controlMarshalFunc = () => new NativeHandleContractMarshalByRefObject(m_Element);
+
+            Func<NativeHandleContractMarshalByRefObject> controlMarshalFunc = () =>
+                                                                              {
+                                                                                  var element = m_EntryPoint.CreateElement(services);
+
+                                                                                  return new NativeHandleContractMarshalByRefObject(element);
+                                                                              };
 
             return (INativeHandleContractWithoutIntPtr) m_UiThreadDispatcher.Invoke(controlMarshalFunc);
         }

@@ -22,7 +22,7 @@ namespace RedGate.AppHost.Server
                 string executingDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
                 string quotedAssemblyPath = "\"" + Path.Combine(executingDirectory, assemblyName) + "\"";
 
-                Process process = Process.Start(Path.Combine(executingDirectory, c_FileName), String.Join(" ", m_Id, quotedAssemblyPath, typeName));
+                Process process = Process.Start(Path.Combine(executingDirectory, c_FileName), String.Join(" ", m_Id, quotedAssemblyPath));
                 try
                 {
                     if (process.CanAssignToJobObject())

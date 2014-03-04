@@ -2,20 +2,10 @@
 using System.AddIn.Pipeline;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
-using RedGate.AppHost.Interfaces;
 using RedGate.AppHost.Server;
 
 namespace RedGate.AppHost.Example.Server
 {
-    public class ServiceLocator : MarshalByRefObject, IAppHostServices
-    {
-        public T GetService<T>() where T : MarshalByRefObject
-        {
-            return null;
-        }
-    }
-
     public partial class MainWindow : Window
     {
         public MainWindow()
