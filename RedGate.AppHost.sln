@@ -17,6 +17,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Example", "Example", "{7B14
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedGate.AppHost.Example.Server", "RedGate.AppHost.Example.Server\RedGate.AppHost.Example.Server.csproj", "{516C4CE3-F671-4E6A-A55D-952D08D3850E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuSpec", "NuSpec", "{F17E9FBD-DD6E-4207-8C45-CFF4E643DDFD}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\RedGate.PhoneGap.Build.Client.nuspec = NuSpec\RedGate.PhoneGap.Build.Client.nuspec
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
