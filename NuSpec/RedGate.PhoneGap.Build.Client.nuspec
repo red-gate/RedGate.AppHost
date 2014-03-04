@@ -13,6 +13,7 @@
 	<references>
 		<reference file="RedGate.AppHost.Server.dll" />
 		<reference file="RedGate.AppHost.Client.exe" />
+		<reference file="RedGate.AppHost.Interfaces.dll" />
 	</references>
     </metadata>
     <files>
