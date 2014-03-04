@@ -1,6 +1,8 @@
 ﻿using System;
 using System.AddIn.Pipeline;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Documents;
 using RedGate.AppHost.Interfaces;
 using RedGate.AppHost.Server;
 
@@ -32,9 +34,11 @@ namespace RedGate.AppHost.Example.Server
             }
             catch (Exception e)
             {
-                
+                Content = new TextBlock()
+                          {
+                              Text = e.ToString()
+                          };
             }
-            
         }
     }
 }
