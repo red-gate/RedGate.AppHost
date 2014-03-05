@@ -1,29 +1,22 @@
 ﻿using System;
 using System.AddIn.Contract;
-using System.AddIn.Pipeline;
-using System.Windows;
 using RedGate.AppHost.Interfaces;
 
-namespace RedGate.AppHost.Client
+namespace RedGate.AppHost.Remoting.WPF
 {
-    internal class NativeHandleContractMarshalByRefObject : MarshalByRefObject, INativeHandleContractWithoutIntPtr
+    internal class NativeHandleContractAdapter : INativeHandleContract
     {
-        private readonly INativeHandleContract m_Upstream;
+        private readonly INativeHandleContractWithoutIntPtr m_Upstream;
 
-        internal NativeHandleContractMarshalByRefObject(FrameworkElement frameworkElement)
-            : this(FrameworkElementAdapters.ViewToContractAdapter(frameworkElement))
+        internal NativeHandleContractAdapter(INativeHandleContractWithoutIntPtr upstream)
         {
-        }
-
-        private NativeHandleContractMarshalByRefObject(INativeHandleContract upstream)
-        {
+            if (upstream == null)
+            {
+                throw new ArgumentNullException("upstream");
+            }
             m_Upstream = upstream;
         }
 
-        public override object InitializeLifetimeService()
-        {
-            return null;
-        }
 
         public IContract QueryContract(string contractIdentifier)
         {
@@ -55,9 +48,9 @@ namespace RedGate.AppHost.Client
             m_Upstream.RevokeLifetimeToken(token);
         }
 
-        public long GetHandle()
+        public IntPtr GetHandle()
         {
-            return (long)m_Upstream.GetHandle();
+            return (IntPtr)m_Upstream.GetHandle();
         }
     }
 }

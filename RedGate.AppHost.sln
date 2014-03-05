@@ -22,6 +22,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuSpec", "NuSpec", "{F17E9F
 		NuSpec\RedGate.PhoneGap.Build.Client.nuspec = NuSpec\RedGate.PhoneGap.Build.Client.nuspec
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedGate.AppHost.Remoting.WPF", "RedGate.AppHost.Remoting.WPF\RedGate.AppHost.Remoting.WPF.csproj", "{24E71C6D-17CB-4D61-A092-EF1A37F7CD70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +54,10 @@ Global
 		{516C4CE3-F671-4E6A-A55D-952D08D3850E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{516C4CE3-F671-4E6A-A55D-952D08D3850E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{516C4CE3-F671-4E6A-A55D-952D08D3850E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{24E71C6D-17CB-4D61-A092-EF1A37F7CD70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24E71C6D-17CB-4D61-A092-EF1A37F7CD70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24E71C6D-17CB-4D61-A092-EF1A37F7CD70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{24E71C6D-17CB-4D61-A092-EF1A37F7CD70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

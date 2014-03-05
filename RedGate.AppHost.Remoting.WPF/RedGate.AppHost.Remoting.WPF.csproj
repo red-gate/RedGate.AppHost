@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DA6AC02A-EAA5-4C61-81BD-1BA3BB615C44}</ProjectGuid>
+    <ProjectGuid>{24E71C6D-17CB-4D61-A092-EF1A37F7CD70}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>RedGate.AppHost.Server</RootNamespace>
-    <AssemblyName>RedGate.AppHost.Server</AssemblyName>
+    <RootNamespace>RedGate.AppHost.Remoting.WPF</RootNamespace>
+    <AssemblyName>RedGate.AppHost.Remoting.WPF</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
@@ -27,11 +27,10 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>$(SolutionDir)Build\Release\</OutputPath>
+    <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
@@ -39,6 +38,7 @@
     <Reference Include="System" />
     <Reference Include="System.AddIn.Contract" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Presentation" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,25 +48,16 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppHostChildHandle.cs" />
-    <Compile Include="ChildProcessFactory.cs" />
-    <Compile Include="Job.cs" />
-    <Compile Include="Native.cs" />
-    <Compile Include="ProcessExtensions.cs" />
+    <Compile Include="NativeHandleContractAdapter.cs" />
+    <Compile Include="NativeHandleContractMarshalByRefObject.cs" />
+    <Compile Include="FrameworkElementExtensions.cs" />
+    <Compile Include="NativeHandleContractWithoutIntPtrExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RedGate.AppHost.Interfaces\RedGate.AppHost.Interfaces.csproj">
       <Project>{3084D987-50DD-43A5-9CF3-CE550513F8D0}</Project>
       <Name>RedGate.AppHost.Interfaces</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RedGate.AppHost.Remoting.WPF\RedGate.AppHost.Remoting.WPF.csproj">
-      <Project>{24E71C6D-17CB-4D61-A092-EF1A37F7CD70}</Project>
-      <Name>RedGate.AppHost.Remoting.WPF</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\RedGate.AppHost.Remoting\RedGate.AppHost.Remoting.csproj">
-      <Project>{B26AA798-4734-434A-9875-7E9000ED24F5}</Project>
-      <Name>RedGate.AppHost.Remoting</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

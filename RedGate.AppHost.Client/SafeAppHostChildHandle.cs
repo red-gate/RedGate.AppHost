@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Threading;
 using RedGate.AppHost.Interfaces;
+using RedGate.AppHost.Remoting.WPF;
 
 namespace RedGate.AppHost.Client
 {
@@ -19,11 +20,11 @@ namespace RedGate.AppHost.Client
         public INativeHandleContractWithoutIntPtr Initialize(IAppHostServices services)
         {
 
-            Func<NativeHandleContractMarshalByRefObject> controlMarshalFunc = () =>
+            Func<INativeHandleContractWithoutIntPtr> controlMarshalFunc = () =>
                                                                               {
                                                                                   var element = m_EntryPoint.CreateElement(services);
 
-                                                                                  return new NativeHandleContractMarshalByRefObject(element);
+                                                                                  return element.ToRemotedElement();
                                                                               };
 
             return (INativeHandleContractWithoutIntPtr) m_UiThreadDispatcher.Invoke(controlMarshalFunc);

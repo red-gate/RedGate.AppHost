@@ -59,7 +59,6 @@
   <ItemGroup>
     <Compile Include="ConsoleNativeMethods.cs" />
     <Compile Include="SafeAppHostChildHandle.cs" />
-    <Compile Include="NativeHandleContractMarshalByRefObject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -67,6 +66,10 @@
     <ProjectReference Include="..\RedGate.AppHost.Interfaces\RedGate.AppHost.Interfaces.csproj">
       <Project>{3084D987-50DD-43A5-9CF3-CE550513F8D0}</Project>
       <Name>RedGate.AppHost.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RedGate.AppHost.Remoting.WPF\RedGate.AppHost.Remoting.WPF.csproj">
+      <Project>{24E71C6D-17CB-4D61-A092-EF1A37F7CD70}</Project>
+      <Name>RedGate.AppHost.Remoting.WPF</Name>
     </ProjectReference>
     <ProjectReference Include="..\RedGate.AppHost.Remoting\RedGate.AppHost.Remoting.csproj">
       <Project>{B26AA798-4734-434A-9875-7E9000ED24F5}</Project>

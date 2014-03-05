@@ -1,9 +1,9 @@
-﻿using System.AddIn.Contract;
+﻿using System.Windows;
 
 namespace RedGate.AppHost.Interfaces
 {
     public interface IAppHostChildHandle
     {
-        INativeHandleContract Initialize(IAppHostServices services);
+        FrameworkElement Initialize(IAppHostServices services);
     }
 }

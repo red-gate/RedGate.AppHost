@@ -1,5 +1,4 @@
 ﻿using System;
-using System.AddIn.Pipeline;
 using System.Windows;
 using System.Windows.Controls;
 using RedGate.AppHost.Server;
@@ -16,11 +15,7 @@ namespace RedGate.AppHost.Example.Server
             {
                 var safeAppHostChildHandle = new ChildProcessFactory().Create("RedGate.AppHost.Example.Client.dll");
 
-                var nativeHandleContractWithoutIntPtr = safeAppHostChildHandle.Initialize(new ServiceLocator());
-
-                var contractToViewAdapter = FrameworkElementAdapters.ContractToViewAdapter(nativeHandleContractWithoutIntPtr);
-
-                Content = contractToViewAdapter;
+                Content = safeAppHostChildHandle.Initialize(new ServiceLocator());
             }
             catch (Exception e)
             {
