@@ -15,14 +15,14 @@ namespace RedGate.AppHost.Server
 
         private readonly string m_Id = string.Format("{0}.IPC.{{{1}}}", c_FileName, Guid.NewGuid());
 
-        public IAppHostChildHandle Create(string assemblyName)
+        public IAppHostChildHandle Create(string assemblyName, bool openDebugConsole = false)
         {
             using (EventWaitHandle signal = new EventWaitHandle(false, EventResetMode.ManualReset, m_Id))
             {
                 string executingDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
                 string quotedAssemblyArg = "\"" + Path.Combine(executingDirectory, assemblyName) + "\"";
                 
-                Process process = Process.Start(Path.Combine(executingDirectory, c_FileName), String.Join(" ", "-i " + m_Id, "-a " + quotedAssemblyArg, "-d"));
+                Process process = Process.Start(Path.Combine(executingDirectory, c_FileName), String.Join(" ", "-i " + m_Id, "-a " + quotedAssemblyArg, openDebugConsole ? "-d" : ""));
                 try
                 {
                     if (process.CanAssignToJobObject())

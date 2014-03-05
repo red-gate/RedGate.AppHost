@@ -14,6 +14,7 @@
       <reference file="RedGate.AppHost.Server.dll" />
       <reference file="RedGate.AppHost.Client.exe" />
       <reference file="RedGate.AppHost.Interfaces.dll" />
+      <reference file="RedGate.AppHost.Remoting.WPF.dll" />
     </references>
   <dependencies>
     <dependency id="CommandLineParser" version="1.9.71" />
