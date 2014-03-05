@@ -25,6 +25,8 @@
     <file src="RedGate.AppHost.Interfaces.pdb" target="lib" />
     <file src="RedGate.AppHost.Remoting.dll" target="lib" />
     <file src="RedGate.AppHost.Remoting.pdb" target="lib" />
+    <file src="RedGate.AppHost.Remoting.WPF.dll" target="lib" />
+    <file src="RedGate.AppHost.Remoting.WPF.pdb" target="lib" />
     <file src="RedGate.AppHost.Server.dll" target="lib" />
     <file src="RedGate.AppHost.Server.pdb" target="lib" />
   </files>
