@@ -2,8 +2,6 @@
 using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Ipc;
-using System.Runtime.Remoting.Lifetime;
-using System.Runtime.Remoting.Services;
 using System.Runtime.Serialization.Formatters;
 
 namespace RedGate.AppHost.Remoting
