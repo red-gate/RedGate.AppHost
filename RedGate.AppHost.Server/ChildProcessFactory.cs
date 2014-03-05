@@ -20,9 +20,9 @@ namespace RedGate.AppHost.Server
             using (EventWaitHandle signal = new EventWaitHandle(false, EventResetMode.ManualReset, m_Id))
             {
                 string executingDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-                string quotedAssemblyPath = "\"" + Path.Combine(executingDirectory, assemblyName) + "\"";
-
-                Process process = Process.Start(Path.Combine(executingDirectory, c_FileName), String.Join(" ", m_Id, quotedAssemblyPath));
+                string quotedAssemblyArg = "\"" + Path.Combine(executingDirectory, assemblyName) + "\"";
+                
+                Process process = Process.Start(Path.Combine(executingDirectory, c_FileName), String.Join(" ", "-i " + m_Id, "-a " + quotedAssemblyArg, "-d"));
                 try
                 {
                     if (process.CanAssignToJobObject())

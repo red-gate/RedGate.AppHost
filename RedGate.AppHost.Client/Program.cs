@@ -1,13 +1,35 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
+using CommandLine;
 using RedGate.AppHost.Interfaces;
 
 namespace RedGate.AppHost.Client
 {
+    internal class Options
+    {
+        [Option('a', "assembly", Required = true, HelpText = "Assembly that contains an IOutOfProcessEntryPoint to load")]
+        public string Assembly { get; set; }
+
+        [Option('i', "id", Required = true, HelpText = "The communication channel to call back to the host")]
+        public string ChannelId { get; set; }
+
+        [Option('d', "debug", Required = false, HelpText = "Opens the client in debug mode")]
+        public bool Debug { get; set; }
+
+        [HelpOption(HelpText = "Display this help screen.")]
+        public string GetUsage()
+        {
+            var usage = new StringBuilder();
+            usage.AppendLine("Red Gate Out of Process App Host");
+            return usage.ToString();
+        }
+    }
+
     internal static class Program
     {
         private static SafeAppHostChildHandle s_SafeAppHostChildHandle;
@@ -15,17 +37,23 @@ namespace RedGate.AppHost.Client
         [STAThread]
         private static void Main(string[] args)
         {
+
+            var options = new Options();
+            if (Parser.Default.ParseArguments(args, options))
+            {
 #if DEBUG
-            ConsoleNativeMethods.AllocConsole();
+                options.Debug = true;
 #endif
 
-            if (args.Length != 2)
-            {
-                MessageBox.Show("Hello :)\n\nI'm the child process for the Red Gate Deployment Manager SSMS add-in.\n\nPlease use SSMS rather than running me directly.", "RedGate.SQLCI.UI", MessageBoxButton.OK, MessageBoxImage.Information);
+                if (options.Debug)
+                    ConsoleNativeMethods.AllocConsole();
+                
+                
+                MainInner(options.ChannelId, options.Assembly);
             }
             else
             {
-                MainInner(args[0], args[1]);                
+                MessageBox.Show("Hello :)\n\nI'm the child process for the Red Gate Deployment Manager SSMS add-in.\n\nPlease use SSMS rather than running me directly.", "RedGate.SQLCI.UI", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 
