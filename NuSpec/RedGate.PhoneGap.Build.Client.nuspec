@@ -15,6 +15,9 @@
       <reference file="RedGate.AppHost.Client.exe" />
       <reference file="RedGate.AppHost.Interfaces.dll" />
     </references>
+  <dependencies>
+    <dependency id="CommandLineParser" version="1.9.71" />
+  </dependencies>
   </metadata>
   <files>
     <file src="RedGate.AppHost.Example.Client.dll" target="lib" />
@@ -30,7 +33,4 @@
     <file src="RedGate.AppHost.Server.dll" target="lib" />
     <file src="RedGate.AppHost.Server.pdb" target="lib" />
   </files>
-  <dependencies>
-    <dependency id="CommandLineParser" version="1.9.71" />
-  </dependencies>
 </package>
