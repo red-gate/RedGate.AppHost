@@ -1,0 +1,28 @@
+<Wix xmlns="http://schemas.microsoft.com/wix/2003/01/wi">
+
+	<!-- Building block fragments because apparently everything has to be contained in a fragment -->
+	<Fragment Id="AppHostCore">
+		<DirectoryRef Id="INSTALLDIR">
+			<Component Id="RedGate.AppHost" Guid="{0A6DBAE8-0CFD-41D9-B27A-6AD72181CB7D}">
+				<File Id="Client" Name="AHClient.exe" LongName="RedGate.AppHost.Client.exe" DiskId="1" src="RedGate.AppHost.Client.exe" /> 
+				<File Id="Server" Name="AHServer.dll" LongName="RedGate.AppHost.Server.dll" DiskId="1" src="RedGate.AppHost.Server.dll" /> 
+				<File Id="Interfaces" Name="AHIfaces.dll" LongName="RedGate.AppHost.Interfaces.dll" DiskId="1" src="RedGate.AppHost.Interfaces.dll" /> 
+				<File Id="Remoting" Name="AHRemote.dll" LongName="RedGate.AppHost.Remoting.dll" DiskId="1" src="RedGate.AppHost.Remoting.dll" /> 
+				<File Id="WpfRemoting" Name="AHWpfRem.dll" LongName="RedGate.AppHost.Remoting.WPF.dll" DiskId="1" src="RedGate.AppHost.Remoting.WPF.dll" /> 
+				<File Id="CommandLine" Name="CLIParse.dll" LongName="CommandLine.dll" DiskId="1" src="CommandLine.dll" /> 
+			</Component>
+		</DirectoryRef>
+	</Fragment>
+
+	<!-- Reference one of the following fragments -->
+	<Fragment Id="AppHost">
+		<FeatureRef Id="Product">
+			<ComponentRef Id="AppHostCore"/>
+		</FeatureRef>
+	</Fragment>
+</Wix>
+
+
+
+
+
