@@ -1,4 +1,7 @@
-﻿using System;
+﻿// ReSharper disable InconsistentNaming
+// ReSharper disable IdentifierTypo
+// ReSharper disable StringLiteralTypo
+using System;
 using System.Runtime.InteropServices;
 
 namespace RedGate.AppHost.Server
@@ -95,10 +98,12 @@ namespace RedGate.AppHost.Server
         [Flags]
         internal enum JOB_OBJECT_LIMIT : uint
         {
+
             JOB_OBJECT_LIMIT_WORKINGSET = 0x00000001,
             JOB_OBJECT_LIMIT_PROCESS_TIME = 0x00000002,
             JOB_OBJECT_LIMIT_JOB_TIME = 0x00000004,
             JOB_OBJECT_LIMIT_ACTIVE_PROCESS = 0x00000008,
+
             JOB_OBJECT_LIMIT_AFFINITY = 0x00000010,
             JOB_OBJECT_LIMIT_PRIORITY_CLASS = 0x00000020,
             JOB_OBJECT_LIMIT_PRESERVE_JOB_TIME = 0x00000040,
@@ -113,3 +118,6 @@ namespace RedGate.AppHost.Server
         }
     }
 }
+// ReSharper restore InconsistentNaming
+// ReSharper restore IdentifierTypo
+// ReSharper restore StringLiteralTypo
