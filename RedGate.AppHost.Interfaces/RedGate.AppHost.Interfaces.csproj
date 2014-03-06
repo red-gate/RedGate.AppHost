@@ -52,7 +52,7 @@
     <Compile Include="IOutOfProcessEntryPoint.cs" />
     <Compile Include="ISafeChildProcessHandle.cs" />
     <Compile Include="IAppHostServices.cs" />
-    <Compile Include="INativeHandleContractWithoutIntPtr.cs" />
+    <Compile Include="IRemoteElement.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

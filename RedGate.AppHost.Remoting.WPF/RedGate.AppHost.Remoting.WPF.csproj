@@ -51,7 +51,7 @@
     <Compile Include="NativeHandleContractAdapter.cs" />
     <Compile Include="NativeHandleContractMarshalByRefObject.cs" />
     <Compile Include="FrameworkElementExtensions.cs" />
-    <Compile Include="NativeHandleContractWithoutIntPtrExtensions.cs" />
+    <Compile Include="RemoteElementExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

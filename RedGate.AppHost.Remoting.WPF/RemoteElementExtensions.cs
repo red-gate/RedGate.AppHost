@@ -5,7 +5,7 @@ using RedGate.AppHost.Interfaces;
 
 namespace RedGate.AppHost.Remoting.WPF
 {
-    public static class NativeHandleContractWithoutIntPtrExtensions
+    public static class RemoteElementExtensions
     {
         public static FrameworkElement ToFrameworkElement(this IRemoteElement remotedElement)
         {
