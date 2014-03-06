@@ -1,6 +1,4 @@
-﻿using System;
-using System.AddIn.Contract;
-using System.Windows;
+﻿using System.Windows;
 using RedGate.AppHost.Interfaces;
 using RedGate.AppHost.Remoting.WPF;
 
