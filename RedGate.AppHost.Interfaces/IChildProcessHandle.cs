@@ -2,7 +2,7 @@
 
 namespace RedGate.AppHost.Interfaces
 {
-    public interface IAppHostChildHandle
+    public interface IChildProcessHandle
     {
         FrameworkElement Initialize(IAppHostServices services);
     }

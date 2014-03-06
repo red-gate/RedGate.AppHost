@@ -7,7 +7,7 @@ namespace RedGate.AppHost.Remoting.WPF
 {
     public static class NativeHandleContractWithoutIntPtrExtensions
     {
-        public static FrameworkElement ToFrameworkElement(this INativeHandleContractWithoutIntPtr remotedElement)
+        public static FrameworkElement ToFrameworkElement(this IRemoteElement remotedElement)
         {
             INativeHandleContract nativeHandleContractAdapter = new NativeHandleContractAdapter(remotedElement);
 

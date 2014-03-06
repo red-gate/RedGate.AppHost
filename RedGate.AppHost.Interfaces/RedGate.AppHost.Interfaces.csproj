@@ -48,9 +48,9 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IAppHostChildHandle.cs" />
+    <Compile Include="IChildProcessHandle.cs" />
     <Compile Include="IOutOfProcessEntryPoint.cs" />
-    <Compile Include="ISafeAppHostChildHandle.cs" />
+    <Compile Include="ISafeChildProcessHandle.cs" />
     <Compile Include="IAppHostServices.cs" />
     <Compile Include="INativeHandleContractWithoutIntPtr.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

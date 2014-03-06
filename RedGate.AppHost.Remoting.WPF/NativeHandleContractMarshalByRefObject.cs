@@ -6,7 +6,7 @@ using RedGate.AppHost.Interfaces;
 
 namespace RedGate.AppHost.Remoting.WPF
 {
-    internal class NativeHandleContractMarshalByRefObject : MarshalByRefObject, INativeHandleContractWithoutIntPtr
+    internal class NativeHandleContractMarshalByRefObject : MarshalByRefObject, IRemoteElement
     {
         private readonly INativeHandleContract m_Upstream;
 

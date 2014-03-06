@@ -58,7 +58,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleNativeMethods.cs" />
-    <Compile Include="SafeAppHostChildHandle.cs" />
+    <Compile Include="SafeChildProcessHandle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

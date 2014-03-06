@@ -6,9 +6,9 @@ namespace RedGate.AppHost.Remoting.WPF
 {
     internal class NativeHandleContractAdapter : INativeHandleContract
     {
-        private readonly INativeHandleContractWithoutIntPtr m_Upstream;
+        private readonly IRemoteElement m_Upstream;
 
-        internal NativeHandleContractAdapter(INativeHandleContractWithoutIntPtr upstream)
+        internal NativeHandleContractAdapter(IRemoteElement upstream)
         {
             if (upstream == null)
             {

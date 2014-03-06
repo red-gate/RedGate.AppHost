@@ -48,7 +48,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AppHostChildHandle.cs" />
+    <Compile Include="ChildProcessHandle.cs" />
     <Compile Include="ChildProcessFactory.cs" />
     <Compile Include="Job.cs" />
     <Compile Include="Native.cs" />

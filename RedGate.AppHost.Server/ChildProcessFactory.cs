@@ -15,7 +15,7 @@ namespace RedGate.AppHost.Server
 
         private readonly string m_Id = string.Format("{0}.IPC.{{{1}}}", c_FileName, Guid.NewGuid());
 
-        public IAppHostChildHandle Create(string assemblyName, bool openDebugConsole = false)
+        public IChildProcessHandle Create(string assemblyName, bool openDebugConsole = false)
         {
             using (EventWaitHandle signal = new EventWaitHandle(false, EventResetMode.ManualReset, m_Id))
             {
@@ -32,7 +32,7 @@ namespace RedGate.AppHost.Server
                     
                     WaitForReadySignal(signal);
 
-                    return new AppHostChildHandle(InitializeRemoting()); //The Database CI code wraps this up to handle disposing. Do we need to?
+                    return new ChildProcessHandle(InitializeRemoting()); //The Database CI code wraps this up to handle disposing. Do we need to?
                 }
                 catch
                 {
@@ -50,11 +50,11 @@ namespace RedGate.AppHost.Server
             }
         }
 
-        private ISafeAppHostChildHandle InitializeRemoting()
+        private ISafeChildProcessHandle InitializeRemoting()
         {
             Remoting.Remoting.RegisterChannels(false, m_Id);
 
-            return Remoting.Remoting.ConnectToService<ISafeAppHostChildHandle>(m_Id);
+            return Remoting.Remoting.ConnectToService<ISafeChildProcessHandle>(m_Id);
         }
     }
 }

@@ -32,7 +32,7 @@ namespace RedGate.AppHost.Client
 
     internal static class Program
     {
-        private static SafeAppHostChildHandle s_SafeAppHostChildHandle;
+        private static SafeChildProcessHandle s_SafeChildProcessHandle;
 
         [STAThread]
         private static void Main(string[] args)
@@ -78,8 +78,8 @@ namespace RedGate.AppHost.Client
         {
             Remoting.Remoting.RegisterChannels(true, id);
 
-            s_SafeAppHostChildHandle = new SafeAppHostChildHandle(Dispatcher.CurrentDispatcher, entryPoint);
-            Remoting.Remoting.RegisterService<SafeAppHostChildHandle, ISafeAppHostChildHandle>(s_SafeAppHostChildHandle);
+            s_SafeChildProcessHandle = new SafeChildProcessHandle(Dispatcher.CurrentDispatcher, entryPoint);
+            Remoting.Remoting.RegisterService<SafeChildProcessHandle, ISafeChildProcessHandle>(s_SafeChildProcessHandle);
         }
 
         private static void SignalReady(string id)
