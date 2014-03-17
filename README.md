@@ -15,4 +15,9 @@ Examples
 There is an example application. It uses WPF to create the Windows chrome, but then the actual content is loaded externally and remoted in. It also shows how to share some services across the remoting boundary.
 
 
+###Use Cases
 
+ - Write your application in .NET 4/4.5, and load inside an application that needs to remain .NET 2
+ - Write your application to take advantage of 64-bit machines with lots of memory, and load inside a 32 bit process
+ - Use native libraries in a safe way that don't conflict with other assemblies in the same app domain
+ - Isolate badly behaved components
