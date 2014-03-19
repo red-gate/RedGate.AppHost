@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace RedGate.AppHost.Interfaces
+﻿namespace RedGate.AppHost.Interfaces
 {
     public interface IAppHostServices
     {
