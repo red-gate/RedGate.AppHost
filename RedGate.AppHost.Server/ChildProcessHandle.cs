@@ -15,11 +15,7 @@ namespace RedGate.AppHost.Server
 
         public FrameworkElement Initialize(IAppHostServices services)
         {
-            object handleContractWithoutIntPtr = m_SafeChildProcessHandle.Initialize(services);
-            
-            IRemoteElement remoteElement = (IRemoteElement) handleContractWithoutIntPtr;
-
-            return remoteElement.ToFrameworkElement();
+            return m_SafeChildProcessHandle.Initialize(services).ToFrameworkElement();
         }
     }
 }
