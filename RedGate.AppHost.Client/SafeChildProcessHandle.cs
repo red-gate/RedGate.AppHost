@@ -25,9 +25,9 @@ namespace RedGate.AppHost.Client
 
         public IRemoteElement CreateElement(IAppHostServices services)
         {
-            Func<IRemoteElement> controlMarshalFunc = () => m_EntryPoint.CreateElement(services).ToRemotedElement();
+            Func<IRemoteElement> createRemoteElement = () => m_EntryPoint.CreateElement(services).ToRemotedElement();
 
-            return (IRemoteElement) m_UiThreadDispatcher.Invoke(controlMarshalFunc);
+            return (IRemoteElement)m_UiThreadDispatcher.Invoke(createRemoteElement);
         }
     }
 }
