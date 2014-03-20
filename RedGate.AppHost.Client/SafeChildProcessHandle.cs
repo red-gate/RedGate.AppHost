@@ -12,6 +12,12 @@ namespace RedGate.AppHost.Client
 
         public SafeChildProcessHandle(Dispatcher uiThreadDispatcher, IOutOfProcessEntryPoint entryPoint)
         {
+            if (uiThreadDispatcher == null) 
+                throw new ArgumentNullException("uiThreadDispatcher");
+            
+            if (entryPoint == null) 
+                throw new ArgumentNullException("entryPoint");
+
             m_UiThreadDispatcher = uiThreadDispatcher;
             m_EntryPoint = entryPoint;
         }
