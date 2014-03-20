@@ -19,8 +19,8 @@ namespace RedGate.AppHost.Example.Server
             }
             catch (Exception e)
             {
-                Content = new TextBlock()
-                          {
+                Content = new TextBlock
+                    {
                               Text = e.ToString()
                           };
             }
