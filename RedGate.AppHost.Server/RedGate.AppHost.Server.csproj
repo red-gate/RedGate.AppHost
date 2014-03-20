@@ -52,10 +52,15 @@
     <Compile Include="ChildProcessHandle.cs" />
     <Compile Include="ChildProcessFactory.cs" />
     <Compile Include="IChildProcessHandle.cs" />
+    <Compile Include="IProcessStartOperation.cs" />
     <Compile Include="Job.cs" />
     <Compile Include="Native.cs" />
     <Compile Include="ProcessExtensions.cs" />
+    <Compile Include="ProcessStarter.cs" />
+    <Compile Include="RemotedProcessBootstrapper.cs" />
+    <Compile Include="StartProcessWithTimeout.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StartProcessWithJobSupport.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RedGate.AppHost.Interfaces\RedGate.AppHost.Interfaces.csproj">
