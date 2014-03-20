@@ -9,6 +9,12 @@ namespace RedGate.AppHost.Remoting
 
         internal ClientChannelSinkProviderForParticularServer(IClientChannelSinkProvider upstream, string id)
         {
+            if (upstream == null) 
+                throw new ArgumentNullException("upstream");
+
+            if (String.IsNullOrEmpty(id)) 
+                throw new ArgumentNullException("id");
+
             m_Upstream = upstream;
             m_Url = string.Format("ipc://{0}", id);
         }
