@@ -18,7 +18,6 @@ namespace RedGate.AppHost.Server
             }
         }
 
-
         [DllImport("kernel32.dll", SetLastError = true)]
         internal static extern bool IsProcessInJob(
             [In] IntPtr ProcessHandle,
