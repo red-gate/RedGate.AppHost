@@ -8,6 +8,6 @@ namespace RedGate.AppHost.Server
     /// </summary>
     public interface IChildProcessHandle
     {
-        FrameworkElement Initialize(IAppHostServices services);
+        FrameworkElement CreateElement(IAppHostServices services);
     }
 }

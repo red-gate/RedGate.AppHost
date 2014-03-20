@@ -16,7 +16,7 @@ namespace RedGate.AppHost.Client
             m_EntryPoint = entryPoint;
         }
 
-        public IRemoteElement Initialize(IAppHostServices services)
+        public IRemoteElement CreateElement(IAppHostServices services)
         {
 
             Func<IRemoteElement> controlMarshalFunc = () =>

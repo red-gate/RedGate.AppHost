@@ -15,7 +15,7 @@ namespace RedGate.AppHost.Example.Server
             {
                 var safeAppHostChildHandle = new ChildProcessFactory().Create("RedGate.AppHost.Example.Client.dll");
 
-                Content = safeAppHostChildHandle.Initialize(new ServiceLocator());
+                Content = safeAppHostChildHandle.CreateElement(new ServiceLocator());
             }
             catch (Exception e)
             {

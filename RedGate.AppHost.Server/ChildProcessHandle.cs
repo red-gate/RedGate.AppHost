@@ -13,9 +13,9 @@ namespace RedGate.AppHost.Server
             m_SafeChildProcessHandle = safeChildProcessHandle;
         }
 
-        public FrameworkElement Initialize(IAppHostServices services)
+        public FrameworkElement CreateElement(IAppHostServices services)
         {
-            return m_SafeChildProcessHandle.Initialize(services).ToFrameworkElement();
+            return m_SafeChildProcessHandle.CreateElement(services).ToFrameworkElement();
         }
     }
 }

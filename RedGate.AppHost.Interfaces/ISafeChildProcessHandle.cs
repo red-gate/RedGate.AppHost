@@ -5,6 +5,6 @@
     /// </summary>
     public interface ISafeChildProcessHandle
     {
-        IRemoteElement Initialize(IAppHostServices services);
+        IRemoteElement CreateElement(IAppHostServices services);
     }
 }
