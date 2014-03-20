@@ -1,4 +1,5 @@
-﻿using System.Runtime.Remoting.Channels;
+﻿using System;
+using System.Runtime.Remoting.Channels;
 
 namespace RedGate.AppHost.Remoting
 {
@@ -27,6 +28,7 @@ namespace RedGate.AppHost.Remoting
 
         public IClientChannelSink CreateSink(IChannelSender channel, string url, object remoteChannelData)
         {
+            //Returning null indicates that the sink cannot be created as per Microsoft documentation
             return url == m_Url ? m_Upstream.CreateSink(channel, url, remoteChannelData) : null;
         }
     }
