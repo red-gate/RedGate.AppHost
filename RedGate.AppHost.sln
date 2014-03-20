@@ -24,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NuSpec", "NuSpec", "{F17E9F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedGate.AppHost.Remoting.WPF", "RedGate.AppHost.Remoting.WPF\RedGate.AppHost.Remoting.WPF.csproj", "{24E71C6D-17CB-4D61-A092-EF1A37F7CD70}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedGate.AppHost.Example.Remote.Services", "RedGate.AppHost.Example.Remote.Services\RedGate.AppHost.Example.Remote.Services.csproj", "{EAFB4321-3E74-40D1-8369-D1667C374D9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +60,10 @@ Global
 		{24E71C6D-17CB-4D61-A092-EF1A37F7CD70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24E71C6D-17CB-4D61-A092-EF1A37F7CD70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24E71C6D-17CB-4D61-A092-EF1A37F7CD70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAFB4321-3E74-40D1-8369-D1667C374D9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAFB4321-3E74-40D1-8369-D1667C374D9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAFB4321-3E74-40D1-8369-D1667C374D9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAFB4321-3E74-40D1-8369-D1667C374D9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -65,5 +71,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{01D94911-0A29-47FB-9691-10ABFD0B78AB} = {7B141F5F-D3EE-4D11-90A5-C65AD6F709B5}
 		{516C4CE3-F671-4E6A-A55D-952D08D3850E} = {7B141F5F-D3EE-4D11-90A5-C65AD6F709B5}
+		{EAFB4321-3E74-40D1-8369-D1667C374D9C} = {7B141F5F-D3EE-4D11-90A5-C65AD6F709B5}
 	EndGlobalSection
 EndGlobal

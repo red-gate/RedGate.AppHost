@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Runtime.Remoting.Lifetime;
-using RedGate.AppHost.Example.Client;
+using RedGate.AppHost.Example.Remote.Services;
 
 namespace RedGate.AppHost.Example.Server
 {

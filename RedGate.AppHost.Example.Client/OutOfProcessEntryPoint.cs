@@ -1,4 +1,5 @@
 ﻿using System.Windows;
+using RedGate.AppHost.Example.Remote.Services;
 using RedGate.AppHost.Interfaces;
 
 namespace RedGate.AppHost.Example.Client

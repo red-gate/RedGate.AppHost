@@ -101,9 +101,9 @@
       <Project>{99836d0f-4605-445c-8b4d-4bef55963477}</Project>
       <Name>RedGate.AppHost.Client</Name>
     </ProjectReference>
-    <ProjectReference Include="..\RedGate.AppHost.Example.Client\RedGate.AppHost.Example.Client.csproj">
-      <Project>{01d94911-0a29-47fb-9691-10abfd0b78ab}</Project>
-      <Name>RedGate.AppHost.Example.Client</Name>
+    <ProjectReference Include="..\RedGate.AppHost.Example.Remote.Services\RedGate.AppHost.Example.Remote.Services.csproj">
+      <Project>{EAFB4321-3E74-40D1-8369-D1667C374D9C}</Project>
+      <Name>RedGate.AppHost.Example.Remote.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\RedGate.AppHost.Interfaces\RedGate.AppHost.Interfaces.csproj">
       <Project>{3084D987-50DD-43A5-9CF3-CE550513F8D0}</Project>

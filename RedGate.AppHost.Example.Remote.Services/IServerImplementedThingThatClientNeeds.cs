@@ -1,4 +1,4 @@
-﻿namespace RedGate.AppHost.Example.Client
+﻿namespace RedGate.AppHost.Example.Remote.Services
 {
     public interface IServerImplementedThingThatClientNeeds
     {
