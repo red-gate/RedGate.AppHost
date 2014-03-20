@@ -13,16 +13,16 @@ namespace RedGate.AppHost.Server
 
         private static readonly TimeSpan s_TimeOut = TimeSpan.FromSeconds(20);
 
-        private readonly string m_Id = string.Format("{0}.IPC.{{{1}}}", c_FileName, Guid.NewGuid());
+        private readonly string m_RemotingId = string.Format("{0}.IPC.{{{1}}}", c_FileName, Guid.NewGuid());
 
         public IChildProcessHandle Create(string assemblyName, bool openDebugConsole = false)
         {
-            using (EventWaitHandle signal = new EventWaitHandle(false, EventResetMode.ManualReset, m_Id))
+            using (var signal = new EventWaitHandle(false, EventResetMode.ManualReset, m_RemotingId))
             {
                 string executingDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
                 string quotedAssemblyArg = "\"" + Path.Combine(executingDirectory, assemblyName) + "\"";
                 
-                Process process = Process.Start(Path.Combine(executingDirectory, c_FileName), String.Join(" ", new [] { "-i " + m_Id, "-a " + quotedAssemblyArg, openDebugConsole ? "-d" : "" }));
+                Process process = Process.Start(Path.Combine(executingDirectory, c_FileName), String.Join(" ", new [] { "-i " + m_RemotingId, "-a " + quotedAssemblyArg, openDebugConsole ? "-d" : "" }));
                 try
                 {
                     if (process.CanAssignToJobObject())
@@ -52,9 +52,9 @@ namespace RedGate.AppHost.Server
 
         private ISafeChildProcessHandle InitializeRemoting()
         {
-            Remoting.Remoting.RegisterChannels(false, m_Id);
+            Remoting.Remoting.RegisterChannels(false, m_RemotingId);
 
-            return Remoting.Remoting.ConnectToService<ISafeChildProcessHandle>(m_Id);
+            return Remoting.Remoting.ConnectToService<ISafeChildProcessHandle>(m_RemotingId);
         }
     }
 }
