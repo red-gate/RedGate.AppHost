@@ -1,5 +1,4 @@
-﻿using System.Text;
-using CommandLine;
+﻿using CommandLine;
 
 namespace RedGate.AppHost.Client
 {
@@ -13,13 +12,5 @@ namespace RedGate.AppHost.Client
 
         [Option('d', "debug", Required = false, HelpText = "Opens the client in debug mode")]
         public bool Debug { get; set; }
-
-        [HelpOption(HelpText = "Display this help screen.")]
-        public string GetUsage()
-        {
-            var usage = new StringBuilder();
-            usage.AppendLine("Red Gate Out of Process App Host");
-            return usage.ToString();
-        }
     }
 }

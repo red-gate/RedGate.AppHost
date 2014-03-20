@@ -16,23 +16,20 @@ namespace RedGate.AppHost.Client
         [STAThread]
         private static void Main(string[] args)
         {
-
             var options = new Options();
             if (Parser.Default.ParseArguments(args, options))
             {
 #if DEBUG
                 options.Debug = true;
 #endif
-
                 if (options.Debug)
                     ConsoleNativeMethods.AllocConsole();
-                
-                
+                          
                 MainInner(options.ChannelId, options.Assembly);
             }
             else
             {
-                MessageBox.Show("Hello :)\n\nI'm the child process for the Red Gate Deployment Manager SSMS add-in.\n\nPlease use SSMS rather than running me directly.", "RedGate.SQLCI.UI", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("This application is used by RedGate.AppHost and should not be started manually. See https://github.com/red-gate/RedGate.AppHost", "Red Gate", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
 
