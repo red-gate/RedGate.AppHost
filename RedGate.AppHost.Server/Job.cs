@@ -18,7 +18,7 @@ namespace RedGate.AppHost.Server
         {
             if (Environment.OSVersion.Version >= s_Windows8)
             {
-                return true;
+                return true; //Windows 8 supports nesting of jobs, so a process in a job can be added to another job
             }
             else
             {
