@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="ChildProcessHandle.cs" />
     <Compile Include="ChildProcessFactory.cs" />
+    <Compile Include="IChildProcessHandle.cs" />
     <Compile Include="Job.cs" />
     <Compile Include="Native.cs" />
     <Compile Include="ProcessExtensions.cs" />
