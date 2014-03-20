@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Windows;
 using System.Windows.Threading;
 using RedGate.AppHost.Interfaces;
 using RedGate.AppHost.Remoting.WPF;
@@ -24,13 +25,7 @@ namespace RedGate.AppHost.Client
 
         public IRemoteElement CreateElement(IAppHostServices services)
         {
-
-            Func<IRemoteElement> controlMarshalFunc = () =>
-                                                      {
-                                                          var element = m_EntryPoint.CreateElement(services);
-
-                                                          return element.ToRemotedElement();
-                                                      };
+            Func<IRemoteElement> controlMarshalFunc = () => m_EntryPoint.CreateElement(services).ToRemotedElement();
 
             return (IRemoteElement) m_UiThreadDispatcher.Invoke(controlMarshalFunc);
         }
