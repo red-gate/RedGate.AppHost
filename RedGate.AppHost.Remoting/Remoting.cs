@@ -2,20 +2,27 @@
 using System.Runtime.Remoting;
 using System.Runtime.Remoting.Channels;
 using System.Runtime.Remoting.Channels.Ipc;
+using System.Runtime.Remoting.Lifetime;
 using System.Runtime.Serialization.Formatters;
 
 namespace RedGate.AppHost.Remoting
 {
     public static class Remoting
     {
-#if DEBUG  // to make bugs like RGD-473 more visible - Kevin: Make this do SponsoredMarshaling
+#if DEBUG
+        /// <summary>
+        /// This constructor tries to highlight issues in your code. .NET doesn't have a inter-process GC, and not calling method on your
+        /// <see cref="MarshalByRefObject" /> services can cause them to be GC'ed. This constructor will force this issue by making the lifetime
+        /// of those remoted objects very short. Implement <see cref="ISponsor" /> on your <see cref="MarshalByRefObject" /> types to ensure 
+        /// your objects remain alive.
+        /// </summary>
         static Remoting()
         {
-            //TimeSpan oneSecond = TimeSpan.FromSeconds(1);
-            //LifetimeServices.LeaseManagerPollTime = oneSecond; // the default is 10 s
-            //LifetimeServices.LeaseTime = oneSecond; // the default is 5 minutes
-            //LifetimeServices.RenewOnCallTime = oneSecond; // the default is 2 minutes
-            //LifetimeServices.SponsorshipTimeout = oneSecond; // the default is 2 minutes
+            TimeSpan oneSecond = TimeSpan.FromSeconds(1);
+            LifetimeServices.LeaseManagerPollTime = oneSecond; // the default is 10 s
+            LifetimeServices.LeaseTime = oneSecond; // the default is 5 minutes
+            LifetimeServices.RenewOnCallTime = oneSecond; // the default is 2 minutes
+            LifetimeServices.SponsorshipTimeout = oneSecond; // the default is 2 minutes
         }
 #endif
 
