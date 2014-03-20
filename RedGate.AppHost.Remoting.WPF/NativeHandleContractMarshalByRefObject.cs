@@ -8,12 +8,12 @@ namespace RedGate.AppHost.Remoting.WPF
 {
     internal class NativeHandleContractMarshalByRefObject : MarshalByRefObject, IRemoteElement
     {
-        private readonly INativeHandleContract m_Upstream;
-
-        internal NativeHandleContractMarshalByRefObject(FrameworkElement frameworkElement)
-            : this(FrameworkElementAdapters.ViewToContractAdapter(frameworkElement))
+        internal static NativeHandleContractMarshalByRefObject Create(FrameworkElement element)
         {
+            return new NativeHandleContractMarshalByRefObject(FrameworkElementAdapters.ViewToContractAdapter(element));
         }
+
+        private readonly INativeHandleContract m_Upstream;
 
         private NativeHandleContractMarshalByRefObject(INativeHandleContract upstream)
         {

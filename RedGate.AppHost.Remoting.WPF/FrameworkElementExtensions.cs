@@ -7,7 +7,7 @@ namespace RedGate.AppHost.Remoting.WPF
     {
         public static IRemoteElement ToRemotedElement(this FrameworkElement element)
         {
-            return new NativeHandleContractMarshalByRefObject(element);
+            return NativeHandleContractMarshalByRefObject.Create(element);
         }
     }
 }
