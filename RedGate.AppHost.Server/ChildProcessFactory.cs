@@ -7,7 +7,7 @@
             return new RemotedProcessBootstrapper(
                 new StartProcessWithTimeout(
                     new StartProcessWithJobSupport(
-                        new ProcessStarter()))).Create(assemblyName, openDebugConsole);
+                        new ProcessStarter32Bit()))).Create(assemblyName, openDebugConsole);
         }
     }
 }
