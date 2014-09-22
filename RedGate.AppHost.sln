@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedGate.AppHost.Remoting.WP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedGate.AppHost.Example.Remote.Services", "RedGate.AppHost.Example.Remote.Services\RedGate.AppHost.Example.Remote.Services.csproj", "{EAFB4321-3E74-40D1-8369-D1667C374D9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedGate.AppHost.Client.x64", "RedGate.AppHost.Client\RedGate.AppHost.Client.x64.csproj", "{B9B7B458-D610-420E-89C5-96EBF49EFA01}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,10 +46,10 @@ Global
 		{B26AA798-4734-434A-9875-7E9000ED24F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B26AA798-4734-434A-9875-7E9000ED24F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B26AA798-4734-434A-9875-7E9000ED24F5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{99836D0F-4605-445C-8B4D-4BEF55963477}.Debug|Any CPU.ActiveCfg = Debug|x64
-		{99836D0F-4605-445C-8B4D-4BEF55963477}.Debug|Any CPU.Build.0 = Debug|x64
-		{99836D0F-4605-445C-8B4D-4BEF55963477}.Release|Any CPU.ActiveCfg = Release|x64
-		{99836D0F-4605-445C-8B4D-4BEF55963477}.Release|Any CPU.Build.0 = Release|x64
+		{99836D0F-4605-445C-8B4D-4BEF55963477}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{99836D0F-4605-445C-8B4D-4BEF55963477}.Debug|Any CPU.Build.0 = Debug|x86
+		{99836D0F-4605-445C-8B4D-4BEF55963477}.Release|Any CPU.ActiveCfg = Release|x86
+		{99836D0F-4605-445C-8B4D-4BEF55963477}.Release|Any CPU.Build.0 = Release|x86
 		{01D94911-0A29-47FB-9691-10ABFD0B78AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{01D94911-0A29-47FB-9691-10ABFD0B78AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01D94911-0A29-47FB-9691-10ABFD0B78AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -64,6 +66,10 @@ Global
 		{EAFB4321-3E74-40D1-8369-D1667C374D9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAFB4321-3E74-40D1-8369-D1667C374D9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAFB4321-3E74-40D1-8369-D1667C374D9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B9B7B458-D610-420E-89C5-96EBF49EFA01}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{B9B7B458-D610-420E-89C5-96EBF49EFA01}.Debug|Any CPU.Build.0 = Debug|x64
+		{B9B7B458-D610-420E-89C5-96EBF49EFA01}.Release|Any CPU.ActiveCfg = Release|x64
+		{B9B7B458-D610-420E-89C5-96EBF49EFA01}.Release|Any CPU.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
