@@ -56,7 +56,8 @@
     <Compile Include="Job.cs" />
     <Compile Include="Native.cs" />
     <Compile Include="ProcessExtensions.cs" />
-    <Compile Include="ProcessStarter.cs" />
+    <Compile Include="ProcessStarter32bit.cs" />
+    <Compile Include="ProcessStarter64Bit.cs" />
     <Compile Include="RemotedProcessBootstrapper.cs" />
     <Compile Include="StartProcessWithTimeout.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
