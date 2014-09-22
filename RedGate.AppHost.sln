@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedGate.AppHost.Interfaces", "RedGate.AppHost.Interfaces\RedGate.AppHost.Interfaces.csproj", "{3084D987-50DD-43A5-9CF3-CE550513F8D0}"
 EndProject
@@ -44,10 +44,10 @@ Global
 		{B26AA798-4734-434A-9875-7E9000ED24F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B26AA798-4734-434A-9875-7E9000ED24F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B26AA798-4734-434A-9875-7E9000ED24F5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{99836D0F-4605-445C-8B4D-4BEF55963477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{99836D0F-4605-445C-8B4D-4BEF55963477}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{99836D0F-4605-445C-8B4D-4BEF55963477}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{99836D0F-4605-445C-8B4D-4BEF55963477}.Release|Any CPU.Build.0 = Release|Any CPU
+		{99836D0F-4605-445C-8B4D-4BEF55963477}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{99836D0F-4605-445C-8B4D-4BEF55963477}.Debug|Any CPU.Build.0 = Debug|x64
+		{99836D0F-4605-445C-8B4D-4BEF55963477}.Release|Any CPU.ActiveCfg = Release|x64
+		{99836D0F-4605-445C-8B4D-4BEF55963477}.Release|Any CPU.Build.0 = Release|x64
 		{01D94911-0A29-47FB-9691-10ABFD0B78AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{01D94911-0A29-47FB-9691-10ABFD0B78AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01D94911-0A29-47FB-9691-10ABFD0B78AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
