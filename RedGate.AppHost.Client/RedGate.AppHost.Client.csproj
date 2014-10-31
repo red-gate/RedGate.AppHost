@@ -59,6 +59,7 @@
   </PropertyGroup>
   <!-- Don't try to sign if it's built inside visual studio, there's probably no point -->
   <PropertyGroup Condition="'$(BuildingInsideVisualStudio)' == ''">
+    <RedGate_DontObfuscate>true</RedGate_DontObfuscate> <!-- Need to set this to tell signing task where to look for assembly -->
     <RedGate_DoSign>true</RedGate_DoSign>
   </PropertyGroup>
   <ItemGroup>
