@@ -34,6 +34,10 @@
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
+  <!-- Don't try to sign if it's built inside visual studio, there's probably no point -->
+  <PropertyGroup Condition="'$(BuildingInsideVisualStudio)' == ''">
+    <RedGate_DoSign>true</RedGate_DoSign>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
