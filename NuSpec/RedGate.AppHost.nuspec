@@ -26,8 +26,10 @@
     <file src="RedGate.AppHost.Example.Server.exe" target="lib" />
     <file src="RedGate.AppHost.Example.Remote.Services.dll" target="lib" />
     <file src="RedGate.AppHost.Client.exe" target="lib" />
+    <file src="RedGate.AppHost.Client.exe.config" target="lib" />
     <file src="RedGate.AppHost.Client.pdb" target="lib" />
     <file src="RedGate.AppHost.Client.x64.exe" target="lib" />
+    <file src="RedGate.AppHost.Client.x64.exe.config" target="lib" />
     <file src="RedGate.AppHost.Client.x64.pdb" target="lib" />
     <file src="RedGate.AppHost.Interfaces.dll" target="lib" />
     <file src="RedGate.AppHost.Interfaces.pdb" target="lib" />
