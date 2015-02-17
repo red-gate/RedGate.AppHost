@@ -5,6 +5,9 @@
 		<DirectoryRef Id="INSTALLDIR">
 			<Component Id="AppHostCore" Guid="{0A6DBAE8-0CFD-41D9-B27A-6AD72181CB7D}">
 				<File Id="Client" Name="AHClient.exe" LongName="RedGate.AppHost.Client.exe" DiskId="1" src="RedGate.AppHost.Client.exe" /> 
+				<File Id="ClientConfig" Name="AHClient.cfg" LongName="RedGate.AppHost.Client.exe.config" DiskId="1" src="RedGate.AppHost.Client.exe.config" />
+				<File Id="Client64" Name="AHClt64.exe" LongName="RedGate.AppHost.Client.x64.exe" DiskId="1" src="RedGate.AppHost.Client.x64.exe" /> 
+				<File Id="Client64Config" Name="AHClt64.cfg" LongName="RedGate.AppHost.Client.x64.exe.config" DiskId="1" src="RedGate.AppHost.Client.x64.exe.config" />
 				<File Id="Server" Name="AHServer.dll" LongName="RedGate.AppHost.Server.dll" DiskId="1" src="RedGate.AppHost.Server.dll" /> 
 				<File Id="Interfaces" Name="AHIfaces.dll" LongName="RedGate.AppHost.Interfaces.dll" DiskId="1" src="RedGate.AppHost.Interfaces.dll" /> 
 				<File Id="Remoting" Name="AHRemote.dll" LongName="RedGate.AppHost.Remoting.dll" DiskId="1" src="RedGate.AppHost.Remoting.dll" /> 
