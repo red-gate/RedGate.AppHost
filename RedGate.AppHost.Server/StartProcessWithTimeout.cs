@@ -8,7 +8,7 @@ namespace RedGate.AppHost.Server
     {
         private readonly IProcessStartOperation m_WrappedProcessStarter;
 
-        private static readonly TimeSpan s_TimeOut = TimeSpan.FromSeconds(20);
+        private static readonly TimeSpan s_TimeOut = TimeSpan.FromMinutes(2);
 
         public StartProcessWithTimeout(IProcessStartOperation wrappedProcessStarter)
         {
