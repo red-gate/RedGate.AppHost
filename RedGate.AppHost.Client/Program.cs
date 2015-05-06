@@ -24,9 +24,14 @@ namespace RedGate.AppHost.Client
                 options.Debug = true;
 #endif
                 if (options.Debug)
+                {
                     ConsoleNativeMethods.AllocConsole();
+                }
 
-                new ParentProcessMonitor(() => { Process.GetCurrentProcess().Kill(); }).Start();
+                if (options.MonitorParentProcess)
+                {
+                    new ParentProcessMonitor(() => { Process.GetCurrentProcess().Kill(); }).Start();
+                }
 
                 MainInner(options.ChannelId, options.Assembly);
             }
