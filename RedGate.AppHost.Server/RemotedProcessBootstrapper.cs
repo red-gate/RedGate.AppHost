@@ -17,7 +17,7 @@ namespace RedGate.AppHost.Server
             m_ProcessBootstrapper = processBootstrapper;
         }
 
-        public IChildProcessHandle Create(string assemblyName, bool openDebugConsole = false)
+        public IChildProcessHandle Create(string assemblyName, bool openDebugConsole)
         {
             Process process = null;
             try

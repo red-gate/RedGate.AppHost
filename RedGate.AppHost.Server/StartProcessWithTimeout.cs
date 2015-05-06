@@ -12,13 +12,13 @@ namespace RedGate.AppHost.Server
 
         public StartProcessWithTimeout(IProcessStartOperation wrappedProcessStarter)
         {
-            if (wrappedProcessStarter == null) 
+            if (wrappedProcessStarter == null)
                 throw new ArgumentNullException("wrappedProcessStarter");
-            
+
             m_WrappedProcessStarter = wrappedProcessStarter;
         }
 
-        public Process StartProcess(string assemblyName, string remotingId, bool openDebugConsole = false)
+        public Process StartProcess(string assemblyName, string remotingId, bool openDebugConsole)
         {
             using (var signal = new EventWaitHandle(false, EventResetMode.ManualReset, remotingId))
             {
