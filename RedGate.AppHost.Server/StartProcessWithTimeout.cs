@@ -18,11 +18,11 @@ namespace RedGate.AppHost.Server
             m_WrappedProcessStarter = wrappedProcessStarter;
         }
 
-        public Process StartProcess(string assemblyName, string remotingId, bool openDebugConsole)
+        public Process StartProcess(string assemblyName, string remotingId, bool openDebugConsole, bool monitorParentProcess)
         {
             using (var signal = new EventWaitHandle(false, EventResetMode.ManualReset, remotingId))
             {
-                var process = m_WrappedProcessStarter.StartProcess(assemblyName, remotingId, openDebugConsole);
+                var process = m_WrappedProcessStarter.StartProcess(assemblyName, remotingId, openDebugConsole, monitorParentProcess);
                 WaitForReadySignal(signal);
                 return process;
             }

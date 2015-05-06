@@ -2,7 +2,7 @@
 {
     public class ChildProcessFactory
     {
-        public IChildProcessHandle Create(string assemblyName, bool openDebugConsole, bool is64Bit)
+        public IChildProcessHandle Create(string assemblyName, bool openDebugConsole, bool is64Bit = false, bool monitorParentProcess = false)
         {
             IProcessStartOperation processStarter;
 
@@ -18,7 +18,7 @@
             return new RemotedProcessBootstrapper(
                 new StartProcessWithTimeout(
                     new StartProcessWithJobSupport(
-                        processStarter))).Create(assemblyName, openDebugConsole);
+                        processStarter))).Create(assemblyName, openDebugConsole, monitorParentProcess);
         }
 
         public IChildProcessHandle Create(string assemblyName, bool openDebugConsole)
