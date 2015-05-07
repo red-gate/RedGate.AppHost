@@ -28,9 +28,9 @@ namespace RedGate.AppHost.Client
                     ConsoleNativeMethods.AllocConsole();
                 }
 
-                if (options.MonitorHostProcess)
+                if (options.HostProcessId.HasValue)
                 {
-                    new HostProcessMonitor(() => { Process.GetCurrentProcess().Kill(); }).Start();
+                    new HostProcessMonitor(options.HostProcessId.Value, () => { Process.GetCurrentProcess().Kill(); }).Start();
                 }
 
                 MainInner(options.ChannelId, options.Assembly);

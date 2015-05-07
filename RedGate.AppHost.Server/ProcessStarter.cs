@@ -19,7 +19,7 @@ namespace RedGate.AppHost.Server
                 "-i " + remotingId,
                 "-a " + quotedAssemblyArg,
                 openDebugConsole ? "-d" : string.Empty,
-                monitorHostProcess ? "-m" : string.Empty
+                monitorHostProcess ? "-p " + Process.GetCurrentProcess().Id : string.Empty
             });
             return Process.Start(processToStart, processArguments);
         }

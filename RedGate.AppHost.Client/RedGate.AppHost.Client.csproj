@@ -84,7 +84,6 @@
   <ItemGroup>
     <Compile Include="ConsoleNativeMethods.cs" />
     <Compile Include="Options.cs" />
-    <Compile Include="ProcessExtensions.cs" />
     <Compile Include="HostProcessMonitor.cs" />
     <Compile Include="SafeChildProcessHandle.cs" />
     <Compile Include="Program.cs" />
