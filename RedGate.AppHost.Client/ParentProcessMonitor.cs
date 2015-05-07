@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Runtime.Remoting.Channels;
 using System.Threading;
 
 namespace RedGate.AppHost.Client
@@ -7,10 +8,8 @@ namespace RedGate.AppHost.Client
     internal class ParentProcessMonitor
     {
         private readonly Action m_OnParentMissing;
-        private readonly int m_PollingIntervalInSeconds;
-        private Thread m_PollingThread;
 
-        public ParentProcessMonitor(Action onParentMissing, int pollingIntervalInSeconds = 10)
+        public ParentProcessMonitor(Action onParentMissing)
         {
             if (onParentMissing == null)
             {
@@ -18,32 +17,16 @@ namespace RedGate.AppHost.Client
             }
 
             m_OnParentMissing = onParentMissing;
-            m_PollingIntervalInSeconds = pollingIntervalInSeconds;
         }
 
         public void Start()
         {
-            m_PollingThread = new Thread(PollForParentProcess);
-            m_PollingThread.Start();
-        }
-
-        private void PollForParentProcess()
-        {
             var currentProcess = Process.GetCurrentProcess();
             var parentProcessId = currentProcess.GetParentProcessId();
+            var parentProcess = Process.GetProcessById(parentProcessId);
 
-            try
-            {
-                while (true)
-                {
-                    Process.GetProcessById(parentProcessId);
-                    Thread.Sleep(m_PollingIntervalInSeconds * 1000);
-                }
-            }
-            catch
-            {
-                m_OnParentMissing();
-            }
+            parentProcess.EnableRaisingEvents = true;
+            parentProcess.Exited += (sender, e) => { m_OnParentMissing(); };
         }
     }
 }
