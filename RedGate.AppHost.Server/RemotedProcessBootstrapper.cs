@@ -17,12 +17,12 @@ namespace RedGate.AppHost.Server
             m_ProcessBootstrapper = processBootstrapper;
         }
 
-        public IChildProcessHandle Create(string assemblyName, bool openDebugConsole, bool monitorParentProcess)
+        public IChildProcessHandle Create(string assemblyName, bool openDebugConsole, bool monitorHostProcess)
         {
             Process process = null;
             try
             {
-                process = m_ProcessBootstrapper.StartProcess(assemblyName, m_RemotingId, openDebugConsole, monitorParentProcess);
+                process = m_ProcessBootstrapper.StartProcess(assemblyName, m_RemotingId, openDebugConsole, monitorHostProcess);
                 return new ChildProcessHandle(InitializeRemoting());
             }
             catch

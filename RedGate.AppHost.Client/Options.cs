@@ -13,7 +13,7 @@ namespace RedGate.AppHost.Client
         [Option('d', "debug", Required = false, HelpText = "Opens the client in debug mode")]
         public bool Debug { get; set; }
 
-        [Option('m', "monitor", Required = false, HelpText = "Exits the process if the parent process exits")]
-        public bool MonitorParentProcess { get; set; }
+        [Option('m', "monitor", Required = false, HelpText = "Exits the process if the host process exits")]
+        public bool MonitorHostProcess { get; set; }
     }
 }
