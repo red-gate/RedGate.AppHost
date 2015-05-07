@@ -1,7 +1,7 @@
 RedGate AppHost
 ===============
 
-This ilbrary provides a way to run much of your application out of process, including the UI.
+This library provides a way to run much of your application out of process, including the UI.
 
 **RedGate.AppHost.Server**: Used in your host application to start the child process and return a handle to the entry point
 
