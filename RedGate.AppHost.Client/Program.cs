@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
@@ -23,8 +24,15 @@ namespace RedGate.AppHost.Client
                 options.Debug = true;
 #endif
                 if (options.Debug)
+                {
                     ConsoleNativeMethods.AllocConsole();
-                          
+                }
+
+                if (options.HostProcessId.HasValue)
+                {
+                    new HostProcessMonitor(options.HostProcessId.Value, () => { Process.GetCurrentProcess().Kill(); }).Start();
+                }
+
                 MainInner(options.ChannelId, options.Assembly);
             }
             else

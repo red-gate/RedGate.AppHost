@@ -9,19 +9,19 @@ namespace RedGate.AppHost.Server
 
         public StartProcessWithJobSupport(IProcessStartOperation wrappedProcessStarter)
         {
-            if (wrappedProcessStarter == null) 
+            if (wrappedProcessStarter == null)
                 throw new ArgumentNullException("wrappedProcessStarter");
-            
+
             m_WrappedProcessStarter = wrappedProcessStarter;
         }
 
-        public Process StartProcess(string assemblyName, string remotingId, bool openDebugConsole = false)
+        public Process StartProcess(string assemblyName, string remotingId, bool openDebugConsole, bool monitorHostProcess)
         {
-            var process = m_WrappedProcessStarter.StartProcess(assemblyName, remotingId, openDebugConsole);
+            var process = m_WrappedProcessStarter.StartProcess(assemblyName, remotingId, openDebugConsole, monitorHostProcess);
 
             if (Job.CanAssignProcessToJobObject(process))
-                new Job().AssignProcessToJobObject(process);              
-                
+                new Job().AssignProcessToJobObject(process);
+
             return process;
         }
     }
