@@ -25,7 +25,7 @@
 
         public IChildProcessHandle Create(string assemblyName, bool openDebugConsole, bool is64Bit)
         {
-            return Create(assemblyName, openDebugConsole, false, false);
+            return Create(assemblyName, openDebugConsole, is64Bit, false);
         }
 
         public IChildProcessHandle Create(string assemblyName, bool openDebugConsole)
