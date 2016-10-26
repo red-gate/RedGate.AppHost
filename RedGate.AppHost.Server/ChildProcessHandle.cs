@@ -10,12 +10,12 @@ namespace RedGate.AppHost.Server
     internal class ChildProcessHandle : IChildProcessHandle
     {
         private readonly ISafeChildProcessHandle m_SafeChildProcessHandle;
-        public Process Process { get; }
+        private readonly Process m_Process;
 
         public ChildProcessHandle(ISafeChildProcessHandle safeChildProcessHandle, Process process)
         {
             m_SafeChildProcessHandle = safeChildProcessHandle;
-            Process = process;
+            m_Process = process;
         }
 
         public FrameworkElement CreateElement(IAppHostServices services)
@@ -26,7 +26,7 @@ namespace RedGate.AppHost.Server
             }
             catch (RemotingException)
             {
-                Process?.KillAndDispose();
+                m_Process?.KillAndDispose();
                 throw;
             }
         }
