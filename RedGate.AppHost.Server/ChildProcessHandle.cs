@@ -26,7 +26,10 @@ namespace RedGate.AppHost.Server
             }
             catch (RemotingException)
             {
-                m_Process?.KillAndDispose();
+                if (m_Process != null)
+                {
+                    m_Process.KillAndDispose();
+                }
                 throw;
             }
         }
