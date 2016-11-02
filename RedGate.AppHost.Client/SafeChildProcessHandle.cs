@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Windows;
 using System.Windows.Threading;
 using RedGate.AppHost.Interfaces;
 using RedGate.AppHost.Remoting.WPF;
@@ -28,6 +27,11 @@ namespace RedGate.AppHost.Client
             Func<IRemoteElement> createRemoteElement = () => m_EntryPoint.CreateElement(services).ToRemotedElement();
 
             return (IRemoteElement)m_UiThreadDispatcher.Invoke(createRemoteElement);
+        }
+
+        public override object InitializeLifetimeService()
+        {
+            return null;
         }
     }
 }
