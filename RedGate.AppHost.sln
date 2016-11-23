@@ -28,6 +28,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedGate.AppHost.Example.Rem
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedGate.AppHost.Client.x64", "RedGate.AppHost.Client\RedGate.AppHost.Client.x64.csproj", "{B9B7B458-D610-420E-89C5-96EBF49EFA01}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".SolutionItems", ".SolutionItems", "{9876CE58-F216-4DB8-9BD0-0079E5E5247C}"
+	ProjectSection(SolutionItems) = preProject
+		LICENSE.md = LICENSE.md
+		README.md = README.md
+		Install\RedGate.AppHost.wxs = Install\RedGate.AppHost.wxs
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
