@@ -20,6 +20,11 @@
   </dependencies>
   </metadata>
   <files>
+    <file src="RedGate.AppHost.Client.exe" target="AppHostClientExe" />
+    <file src="RedGate.AppHost.Client.pdb" target="AppHostClientExe" />
+    <file src="RedGate.AppHost.Client.x64.exe" target="AppHostClientExe" />
+    <file src="RedGate.AppHost.Client.x64.pdb" target="AppHostClientExe" />
+    
     <file src="Build\RedGate.AppHost.targets" target="Build" />
     
     <file src="RedGate.AppHost.Example.Client.dll" target="lib" />
@@ -33,11 +38,6 @@
     <file src="RedGate.AppHost.Remoting.WPF.pdb" target="lib" />
     <file src="RedGate.AppHost.Server.dll" target="lib" />
     <file src="RedGate.AppHost.Server.pdb" target="lib" />
-    
-    <file src="RedGate.AppHost.Client.exe" target="tools" />
-    <file src="RedGate.AppHost.Client.pdb" target="tools" />
-    <file src="RedGate.AppHost.Client.x64.exe" target="tools" />
-    <file src="RedGate.AppHost.Client.x64.pdb" target="tools" />
     
     <file src="RedGate.AppHost.wxs" target="WiX2\RedGate.AppHost.wxs" />
   </files>
