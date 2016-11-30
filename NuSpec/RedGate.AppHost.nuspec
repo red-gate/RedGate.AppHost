@@ -12,8 +12,6 @@
     <summary>Provides a way to host a UI out of process and remote it in</summary>
     <references>
       <reference file="RedGate.AppHost.Server.dll" />
-      <reference file="RedGate.AppHost.Client.exe" />
-      <reference file="RedGate.AppHost.Client.x64.exe" />
       <reference file="RedGate.AppHost.Interfaces.dll" />
       <reference file="RedGate.AppHost.Remoting.WPF.dll" />
     </references>
@@ -22,13 +20,16 @@
   </dependencies>
   </metadata>
   <files>
+    <file src="RedGate.AppHost.Client.exe" target="AppHostClientExe" />
+    <file src="RedGate.AppHost.Client.pdb" target="AppHostClientExe" />
+    <file src="RedGate.AppHost.Client.x64.exe" target="AppHostClientExe" />
+    <file src="RedGate.AppHost.Client.x64.pdb" target="AppHostClientExe" />
+    
+    <file src="Build\RedGate.AppHost.targets" target="Build" />
+    
     <file src="RedGate.AppHost.Example.Client.dll" target="lib" />
     <file src="RedGate.AppHost.Example.Server.exe" target="lib" />
     <file src="RedGate.AppHost.Example.Remote.Services.dll" target="lib" />
-    <file src="RedGate.AppHost.Client.exe" target="lib" />
-    <file src="RedGate.AppHost.Client.pdb" target="lib" />
-    <file src="RedGate.AppHost.Client.x64.exe" target="lib" />
-    <file src="RedGate.AppHost.Client.x64.pdb" target="lib" />
     <file src="RedGate.AppHost.Interfaces.dll" target="lib" />
     <file src="RedGate.AppHost.Interfaces.pdb" target="lib" />
     <file src="RedGate.AppHost.Remoting.dll" target="lib" />
@@ -37,6 +38,7 @@
     <file src="RedGate.AppHost.Remoting.WPF.pdb" target="lib" />
     <file src="RedGate.AppHost.Server.dll" target="lib" />
     <file src="RedGate.AppHost.Server.pdb" target="lib" />
+    
     <file src="RedGate.AppHost.wxs" target="WiX2\RedGate.AppHost.wxs" />
   </files>
 </package>

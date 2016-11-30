@@ -35,6 +35,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".SolutionItems", ".Solution
 		Install\RedGate.AppHost.wxs = Install\RedGate.AppHost.wxs
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build", "Build", "{7E97DF57-D9F8-4D87-AFA2-349057114EFC}"
+	ProjectSection(SolutionItems) = preProject
+		NuSpec\Build\RedGate.AppHost.targets = NuSpec\Build\RedGate.AppHost.targets
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,5 +90,6 @@ Global
 		{01D94911-0A29-47FB-9691-10ABFD0B78AB} = {7B141F5F-D3EE-4D11-90A5-C65AD6F709B5}
 		{516C4CE3-F671-4E6A-A55D-952D08D3850E} = {7B141F5F-D3EE-4D11-90A5-C65AD6F709B5}
 		{EAFB4321-3E74-40D1-8369-D1667C374D9C} = {7B141F5F-D3EE-4D11-90A5-C65AD6F709B5}
+		{7E97DF57-D9F8-4D87-AFA2-349057114EFC} = {F17E9FBD-DD6E-4207-8C45-CFF4E643DDFD}
 	EndGlobalSection
 EndGlobal
