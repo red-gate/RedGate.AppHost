@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>RedGate.AppHost</id>
+    <id>CefSharp-Remoting.RedGate.AppHost</id>
     <version>1.0.0</version>
-    <title>Red Gate Out of Process App Host</title>
+    <title>CefSharp-Remoting fork of Red Gate Out of Process App Host</title>
     <authors>Red Gate</authors>
     <owners>Red Gate</owners>
-    <projectUrl>https://github.com/red-gate/RedGate.AppHost</projectUrl>
+    <projectUrl>https://github.com/rupertsciamenna89/RedGate.AppHost</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>Provides a way to host a UI out of process and remote it in</description>
     <summary>Provides a way to host a UI out of process and remote it in</summary>
