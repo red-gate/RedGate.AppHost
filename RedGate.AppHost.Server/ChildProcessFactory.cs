@@ -2,17 +2,20 @@
 {
     public class ChildProcessFactory
     {
-        public IChildProcessHandle Create(string assemblyName, bool openDebugConsole, bool is64Bit, bool monitorHostProcess)
-        {
+        public string ClientExecutablePath { get; set; }
+
+        public IChildProcessHandle Create(string assemblyName, bool openDebugConsole, bool is64Bit, bool monitorHostProcess) {
             IProcessStartOperation processStarter;
 
-            if (is64Bit)
-            {
-                processStarter = new ProcessStarter64Bit();
+            if (is64Bit) {
+                processStarter = new ProcessStarter64Bit() {
+                    ClientExecutablePath = ClientExecutablePath
+                };
             }
-            else
-            {
-                processStarter = new ProcessStarter32Bit();
+            else {
+                processStarter = new ProcessStarter32Bit() {
+                    ClientExecutablePath = ClientExecutablePath
+                };
             }
 
             return new RemotedProcessBootstrapper(
