@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>CefSharp-Remoting.RedGate.AppHost</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <title>CefSharp-Remoting fork of Red Gate Out of Process App Host</title>
     <authors>Red Gate</authors>
     <owners>Red Gate</owners>
@@ -16,7 +16,7 @@
       <reference file="RedGate.AppHost.Remoting.WPF.dll" />
     </references>
     <dependencies>
-      <dependency id="CommandLineParser" version="1.9.71" />
+      <dependency id="CommandLineParser" version="2.2.0" />
     </dependencies>
   </metadata>
   <files>

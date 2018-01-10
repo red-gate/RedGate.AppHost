@@ -14,7 +14,7 @@ namespace RedGate.AppHost.Server
             if (!ret)
             {
                 int error = Marshal.GetLastWin32Error();
-                throw new ApplicationException(string.Format("ERROR: {0} failed with error code {1}", action.Method, error));
+                throw new ApplicationException($"ERROR: {action.Method} failed with error code {error}");
             }
         }
 
