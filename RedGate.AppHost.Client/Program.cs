@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Reflection;
@@ -53,9 +54,22 @@ namespace RedGate.AppHost.Client
         {
             var outOfProcAssembly = Assembly.LoadFile(assembly);
 
-            var entryPoint = outOfProcAssembly.GetTypes().Single(x => x.GetInterfaces().Contains(typeof (IOutOfProcessEntryPoint)));
+            Type entryPoint = FindEntryPoint(outOfProcAssembly);
 
-            return (IOutOfProcessEntryPoint) Activator.CreateInstance(entryPoint);
+            return (IOutOfProcessEntryPoint)Activator.CreateInstance(entryPoint);
+        }
+
+        private static Type FindEntryPoint(Assembly outOfProcAssembly)
+        {
+            var types = new Type[]{ };
+            try
+            {
+                types = outOfProcAssembly.GetTypes();
+            } catch (ReflectionTypeLoadException ex)
+            {
+                types = ex.Types.Where(x => x != null).ToArray();
+            }
+            return types.Single(x => x.GetInterfaces().Contains(typeof(IOutOfProcessEntryPoint)));
         }
 
         private static void InitializeRemoting(string id, IOutOfProcessEntryPoint entryPoint)
