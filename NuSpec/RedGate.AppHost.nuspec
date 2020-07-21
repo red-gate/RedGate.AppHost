@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>CefSharp-Remoting.RedGate.AppHost</id>
-    <version>1.0.3</version>
+    <version>1.0.4</version>
     <title>CefSharp-Remoting fork of Red Gate Out of Process App Host</title>
     <authors>Red Gate</authors>
     <owners>Red Gate</owners>
@@ -11,12 +11,16 @@
     <description>Provides a way to host a UI out of process and remote it in. It's a CefSharp-Remoting fork. This package must not be used for production environment. It has only educative purpose.</description>
     <summary>Provides a way to host a UI out of process and remote it in.  It's a CefSharp-Remoting fork.</summary>
     <references>
-      <reference file="RedGate.AppHost.Server.dll" />
-      <reference file="RedGate.AppHost.Interfaces.dll" />
-      <reference file="RedGate.AppHost.Remoting.WPF.dll" />
+      <group targetFramework="net452">
+        <reference file="RedGate.AppHost.Server.dll" />
+        <reference file="RedGate.AppHost.Interfaces.dll" />
+        <reference file="RedGate.AppHost.Remoting.WPF.dll" />
+      </group>
     </references>
     <dependencies>
-      <dependency id="CommandLineParser" version="2.2.1" />
+      <group targetFramework="net452">
+        <dependency id="CommandLineParser" version="2.2.1" />
+      </group>
     </dependencies>
   </metadata>
   <files>
@@ -38,6 +42,10 @@
     <file src="RedGate.AppHost.Remoting.WPF.pdb" target="lib\net452\" />
     <file src="RedGate.AppHost.Server.dll" target="lib\net452\" />
     <file src="RedGate.AppHost.Server.pdb" target="lib\net452\" />
+        
+    <file src="RedGate.AppHost.Interfaces.dll" target="ref\net452\" />
+    <file src="RedGate.AppHost.Server.dll" target="ref\net452\" />
+    <file src="RedGate.AppHost.Remoting.WPF.dll" target="ref\net452\" />
 
     <file src="RedGate.AppHost.wxs" target="WiX2\RedGate.AppHost.wxs" />
   </files>
