@@ -1,44 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>RedGate.AppHost</id>
-    <version>1.0.0</version>
-    <title>Red Gate Out of Process App Host</title>
+    <id>CefSharp-Remoting.RedGate.AppHost</id>
+    <version>1.0.4</version>
+    <title>CefSharp-Remoting fork of Red Gate Out of Process App Host</title>
     <authors>Red Gate</authors>
     <owners>Red Gate</owners>
-    <projectUrl>https://github.com/red-gate/RedGate.AppHost</projectUrl>
+    <projectUrl>https://github.com/rupertsciamenna89/RedGate.AppHost</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>Provides a way to host a UI out of process and remote it in</description>
-    <summary>Provides a way to host a UI out of process and remote it in</summary>
+    <description>Provides a way to host a UI out of process and remote it in. It's a CefSharp-Remoting fork. This package must not be used for production environment. It has only educative purpose.</description>
+    <summary>Provides a way to host a UI out of process and remote it in.  It's a CefSharp-Remoting fork.</summary>
     <references>
-      <reference file="RedGate.AppHost.Server.dll" />
-      <reference file="RedGate.AppHost.Interfaces.dll" />
-      <reference file="RedGate.AppHost.Remoting.WPF.dll" />
+      <group targetFramework="net452">
+        <reference file="RedGate.AppHost.Server.dll" />
+        <reference file="RedGate.AppHost.Interfaces.dll" />
+        <reference file="RedGate.AppHost.Remoting.WPF.dll" />
+      </group>
     </references>
-  <dependencies>
-    <dependency id="CommandLineParser" version="1.9.71" />
-  </dependencies>
+    <dependencies>
+      <group targetFramework="net452">
+        <dependency id="CommandLineParser" version="2.2.1" />
+      </group>
+    </dependencies>
   </metadata>
   <files>
     <file src="RedGate.AppHost.Client.exe" target="AppHostClientExe" />
     <file src="RedGate.AppHost.Client.pdb" target="AppHostClientExe" />
     <file src="RedGate.AppHost.Client.x64.exe" target="AppHostClientExe" />
     <file src="RedGate.AppHost.Client.x64.pdb" target="AppHostClientExe" />
-    
+
     <file src="Build\RedGate.AppHost.targets" target="Build" />
-    
-    <file src="RedGate.AppHost.Example.Client.dll" target="lib" />
-    <file src="RedGate.AppHost.Example.Server.exe" target="lib" />
-    <file src="RedGate.AppHost.Example.Remote.Services.dll" target="lib" />
-    <file src="RedGate.AppHost.Interfaces.dll" target="lib" />
-    <file src="RedGate.AppHost.Interfaces.pdb" target="lib" />
-    <file src="RedGate.AppHost.Remoting.dll" target="lib" />
-    <file src="RedGate.AppHost.Remoting.pdb" target="lib" />
-    <file src="RedGate.AppHost.Remoting.WPF.dll" target="lib" />
-    <file src="RedGate.AppHost.Remoting.WPF.pdb" target="lib" />
-    <file src="RedGate.AppHost.Server.dll" target="lib" />
-    <file src="RedGate.AppHost.Server.pdb" target="lib" />
-    
+
+    <file src="RedGate.AppHost.Example.Client.dll" target="lib\net452\" />
+    <file src="RedGate.AppHost.Example.Server.exe" target="lib\net452\" />
+    <file src="RedGate.AppHost.Example.Remote.Services.dll" target="lib\net452\" />
+    <file src="RedGate.AppHost.Interfaces.dll" target="lib\net452\" />
+    <file src="RedGate.AppHost.Interfaces.pdb" target="lib\net452\" />
+    <file src="RedGate.AppHost.Remoting.dll" target="lib\net452\" />
+    <file src="RedGate.AppHost.Remoting.pdb" target="lib\net452\" />
+    <file src="RedGate.AppHost.Remoting.WPF.dll" target="lib\net452\" />
+    <file src="RedGate.AppHost.Remoting.WPF.pdb" target="lib\net452\" />
+    <file src="RedGate.AppHost.Server.dll" target="lib\net452\" />
+    <file src="RedGate.AppHost.Server.pdb" target="lib\net452\" />
+        
+    <file src="RedGate.AppHost.Interfaces.dll" target="ref\net452\" />
+    <file src="RedGate.AppHost.Server.dll" target="ref\net452\" />
+    <file src="RedGate.AppHost.Remoting.WPF.dll" target="ref\net452\" />
+
     <file src="RedGate.AppHost.wxs" target="WiX2\RedGate.AppHost.wxs" />
   </files>
 </package>

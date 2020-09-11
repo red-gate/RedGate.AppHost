@@ -9,10 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RedGate.AppHost.Remoting.WPF</RootNamespace>
     <AssemblyName>RedGate.AppHost.Remoting.WPF</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>\\red-gate.com\Files\RG_Build_Key\RedGate.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>RedGate_AppHost.snk</AssemblyOriginatorKeyFile>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -24,6 +24,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,10 +33,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <!-- Don't try to sign if it's built inside visual studio, there's probably no point -->
   <PropertyGroup Condition="'$(BuildingInsideVisualStudio)' == ''">
-    <RedGate_DontObfuscate>true</RedGate_DontObfuscate> <!-- Need to set this to tell signing task where to look for assembly -->
+    <RedGate_DontObfuscate>true</RedGate_DontObfuscate>
+    <!-- Need to set this to tell signing task where to look for assembly -->
     <RedGate_DoSign>true</RedGate_DoSign>
   </PropertyGroup>
   <ItemGroup>
@@ -65,6 +68,9 @@
       <Project>{3084D987-50DD-43A5-9CF3-CE550513F8D0}</Project>
       <Name>RedGate.AppHost.Interfaces</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="RedGate_AppHost.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(RedGate_BuildTargetsPath)" Condition="'$(BuildingInsideVisualStudio)' == ''" />

@@ -7,7 +7,7 @@ namespace RedGate.AppHost.Server
     internal class RemotedProcessBootstrapper
     {
         private readonly IProcessStartOperation m_ProcessBootstrapper;
-        private readonly string m_RemotingId = string.Format("RedGate.AppHost.IPC.{{{0}}}", Guid.NewGuid());
+        private readonly string m_RemotingId = $"RedGate.AppHost.IPC.{{{Guid.NewGuid()}}}";
 
         public RemotedProcessBootstrapper(IProcessStartOperation processBootstrapper)
         {
@@ -27,8 +27,7 @@ namespace RedGate.AppHost.Server
             }
             catch
             {
-                if (process != null)
-                    process.KillAndDispose();
+                process?.KillAndDispose();
 
                 throw;
             }

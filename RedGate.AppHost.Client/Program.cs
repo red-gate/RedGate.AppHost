@@ -17,9 +17,10 @@ namespace RedGate.AppHost.Client
         [STAThread]
         private static void Main(string[] args)
         {
-            var options = new Options();
-            if (Parser.Default.ParseArguments(args, options))
-            {
+            var parseResult = Parser.Default.ParseArguments<Options>(args);
+
+            if (parseResult.Tag == ParserResultType.Parsed) {
+                var options = parseResult.MapResult(el => el, el => null);
 #if DEBUG
                 options.Debug = true;
 #endif
